@@ -6,10 +6,11 @@ const formatSceneAsText = require('../view/formatSceneAsText')
 let router = express.Router()
 
 router.get('/:sceneId', (req, res) => {
+    let wrapWidth = req.query.wrapWidth || 60
     let sceneId = req.params.sceneId
     try {
         let scene = scenes.findSceneById(sceneId)
-        res.send(formatSceneAsText(scene, 60, "http://localhost:3000"))    
+        res.send(formatSceneAsText(scene, wrapWidth, "http://localhost:3000"))    
     }
     catch (error) {
         console.log(error)
