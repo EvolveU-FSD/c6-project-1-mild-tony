@@ -1,6 +1,6 @@
 let scenes = {}
 
-function createScene(id, description, options) {
+async function createScene(id, description, options) {
     if (!options) {
         options = []
     }
@@ -11,7 +11,7 @@ function createScene(id, description, options) {
     }
 }
 
-function findSceneById(id) {
+async function findSceneById(id) {
     let scene = scenes[id]
     if (!scene) {
         throw new Error("Scene " + id + " does not exist!")
