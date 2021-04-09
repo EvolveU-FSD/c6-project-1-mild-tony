@@ -1,5 +1,3 @@
-require('./model/skyrim') // initialize all of the scenes
-
 const sceneRoutes = require('./routes/scene')
 
 const express = require('express')

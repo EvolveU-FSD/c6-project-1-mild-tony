@@ -1,15 +1,15 @@
 const express = require('express')
 
-const scenes = require('../model/scenes')
+const scenes = require('../model/scenesInMongo')
 const formatSceneAsText = require('../view/formatSceneAsText')
 
 let router = express.Router()
 
-router.get('/:sceneId', async (req, res) => {
+router.get('/:sceneName', async (req, res) => {
     let wrapWidth = req.query.wrapWidth || 60
-    let sceneId = req.params.sceneId
+    let sceneName = req.params.sceneName
     try {
-        let scene = await scenes.findSceneById(sceneId)
+        let scene = await scenes.findSceneByName(sceneName)
         res.send(formatSceneAsText(scene, wrapWidth, "http://localhost:3000"))    
     }
     catch (error) {

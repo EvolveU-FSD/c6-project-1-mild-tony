@@ -1,4 +1,4 @@
-const scenes = require('./scenes')
+const scenes = require('./scenesInMongo')
 
 scenes.createScene("intro", 
 `As your senses return to you there is the familiar sound and jostling of a wagon, the smell of horses - and tension in the air
